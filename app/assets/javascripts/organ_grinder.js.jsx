@@ -3,7 +3,12 @@ $(function(){
 		render: function(){
 			var keys = []
 		  Object.keys(Tones).forEach(function(key){
-						keys.push(<Key noteName={key}/>)
+						if (key === "C2") {
+							keys.push(<Key type={"sharp"} noteName={key}/>)
+						}else{
+							keys.push(<Key noteName={key}/>)
+						}
+						
 		  })
 			return(
 				<div id="organ">{keys}</div>

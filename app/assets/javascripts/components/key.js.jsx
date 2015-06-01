@@ -1,7 +1,13 @@
 var Key = React.createClass({
 	
 	getInitialState: function(){
-		return {keyClass: "key" }
+		
+		if (this.props.type) {
+			return {keyClass: this.props.type }
+		}else{
+			return {keyClass: "key" }
+		}
+		
 	},
 	
 	componentDidMount:function(){

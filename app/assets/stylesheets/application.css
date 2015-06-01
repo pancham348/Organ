@@ -17,8 +17,18 @@
 .key{
 	width: 20px;
 	height: 100px;
-	border: solid 1px white;
+	border: solid 1px black;
+	background-color: white;
+	position: relative;
+}
+
+.sharp{
+	width: 20px;
+	height: 75px;
 	background-color: black;
+	z-index: 2;
+	position: relative;
+	left: -10px;
 }
 
 .blue-key{
@@ -30,4 +40,5 @@
 
 #organ{
 	display: inline-flex;
+	position: relative;
 }
