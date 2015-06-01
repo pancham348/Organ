@@ -15,8 +15,19 @@
  */
 
 .key{
-	width: 5%;
-	height: 30%;
+	width: 20px;
+	height: 100px;
 	border: solid 1px white;
 	background-color: black;
+}
+
+.blue-key{
+	width: 20px;
+	height: 100px;
+	border: solid 1px white;
+	background-color: blue;
+}
+
+#organ{
+	display: inline-flex;
 }
