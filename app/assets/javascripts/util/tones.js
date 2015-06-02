@@ -52,8 +52,9 @@
 	
 	window.Tones = []
 
-	for (key in initialTones){
-		for (var j = 3; j <= 6; j++) {
+
+	for (var j = 3; j <= 6; j++) {
+		for (key in initialTones){
 			if (j === 3 && ((key === 'A') || (key === 'B'))) {
 				continue
 			}
