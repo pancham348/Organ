@@ -19,16 +19,22 @@
 	height: 100px;
 	border: solid 1px black;
 	background-color: white;
-	position: relative;
 }
 
 .sharp{
-	width: 20px;
+	width: 15px;
 	height: 75px;
 	background-color: black;
 	z-index: 2;
-	position: relative;
-	left: -10px;
+	margin:0 -7.5px 0 -7.5px;
+}
+
+.sharp-active{
+	width: 15px;
+	height: 75px;
+	background-color: blue;
+	z-index: 2;
+	margin:0 -7.5px 0 -7.5px;
 }
 
 .blue-key{
@@ -40,5 +46,4 @@
 
 #organ{
 	display: inline-flex;
-	position: relative;
 }

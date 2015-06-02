@@ -2,8 +2,10 @@ $(function(){
 	var Organ = React.createClass({
 		render: function(){
 			var keys = []
-		  Object.keys(Tones).forEach(function(key){
-						if (key === "C2") {
+
+		  Tones.forEach(function(key){
+
+						if (key.length === 3) {
 							keys.push(<Key type={"sharp"} noteName={key}/>)
 						}else{
 							keys.push(<Key noteName={key}/>)

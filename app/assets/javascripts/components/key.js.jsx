@@ -11,17 +11,27 @@ var Key = React.createClass({
 	},
 	
 	componentDidMount:function(){
-		this.note = new Note(Tones[this.props.noteName])
+		this.note = new Note(allTones[this.props.noteName])
 		KeyStore.addChangeListener(this.playNote);
 	},
 
 	playNote: function(){
 		if (playingKeys[this.props.noteName]) {
 			this.note.start();
-			this.setState({keyClass: "blue-key"})
+			if (this.props.type) {
+				this.setState({keyClass: "sharp-active"})
+			}else{
+				this.setState({keyClass: "blue-key"})
+			}
+			
 		}else{
 			this.note.stop();
-			this.setState({keyClass: "key"})
+			if (this.props.type) {
+				this.setState({keyClass: this.props.type});
+			}else{
+				this.setState({keyClass: "key"});
+			}
+			
 		}
 	},
 
