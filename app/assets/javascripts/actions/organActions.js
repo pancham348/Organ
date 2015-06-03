@@ -2,7 +2,8 @@ window.organActions = {
 	pressKey: function(keyCode){
     AppDispatcher.dispatch({
       actionType: OrganConstants.KEY_PRESSED,
-      keyCode: keyCode
+      keyCode: keyCode,
+			startTime: Date.now()
     });
 	},
 	
@@ -10,6 +11,19 @@ window.organActions = {
     AppDispatcher.dispatch({
       actionType: OrganConstants.KEY_RELEASED,
       keyCode: keyCode
+    });
+	},
+	
+	startRecording: function(){
+    AppDispatcher.dispatch({
+			actionType: OrganConstants.RECORDING,
+      startTime: Date.now()
+    });
+	},
+	
+	stopRecording: function(){
+    AppDispatcher.dispatch({
+			actionType: OrganConstants.STOPPED_RECORDING,
     });
 	}
 }

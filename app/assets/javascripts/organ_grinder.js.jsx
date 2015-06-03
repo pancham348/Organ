@@ -13,7 +13,10 @@ $(function(){
 						
 		  })
 			return(
-				<div id="organ">{keys}</div>
+				<div>
+					<div id="organ">{keys}</div>
+					<Recorder />
+				</div>
 			)
 		}
 	});
