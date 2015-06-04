@@ -1,27 +1,23 @@
 var Recorder = React.createClass({
-	
 	componentDidMount: function(){
-		this.track = new Track("newTrack")
+		this.track = new Track("newTrack");
+		KeyStore.addChangeListener(this._onChange);
 	},
-	
+	_onChange: function(){
+		this.track.addNotes(Object.keys(KeyStore.getPlayingKeys()));
+	},
 	record: function(){
-		if (this.track) {
-			this.track.record();
-		}
+		this.track.record();
 	},
-	
+
 	stopRecording: function(){
-		if (this.track) {
-			this.track.stopRecording();
-		}
+		this.track.stopRecording();
 	},
-	
+
 	play: function(){
-		if (this.track) {
-			this.track.play();
-		}
+		this.track.play();
 	},
-	
+
 	render: function(){
 		var that = this;
 		return(

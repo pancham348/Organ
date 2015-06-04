@@ -1,45 +1,47 @@
 (function(){
 	window.Track = function(trackName){
-		this.trackName =  trackName;
+		this.trackName = trackName;
 		this.roll = [];
+		window.track = this;
 	}
-	
+
+	var _playNotes = function(notes){
+		//play all the notes
+		KeyStore._resetKeys();
+		notes.forEach(function(note){
+			organActions.playKey(note);
+		})
+		//KeyStore._resetKeys();
+	};
+
 	Track.prototype = {
 		record: function(){
+			KeyStore._resetKeys();
 			var d = new Date();
 			this.startTime = d.getTime();
-			organActions.startRecording();
 			console.log("Recording");
 		},
-		
+
 		stopRecording: function(){
-			var d = Date.now()
-			this.delta = d - this.startTime;
-			this.addNotes(lastPlayed, this.delta);
-			organActions.stopRecording();
-			lastPlayed = [];
+			this.addNotes([]);
 			console.log(this.roll)
 		},
-		
-		addNotes: function(notes, delta){
-				this.roll = notes;
-		},
-		
-		play: function(){
-			var start = Date.now()
-			while (Date.now() - start <= this.delta) {
-					this.roll.forEach(function(roll){
-							var currentTime = Date.now()
-							//var delta = roll.time.start - start;
-							roll.note.start();
-					})
-			}
-			
 
-				this.roll.forEach(function(roll){
-						roll.note.stop();
-				});
+		addNotes: function(notes){
+			var delta = Date.now() - this.startTime;
+			this.roll.push({notes: notes, time: delta});
+		},
+		play: function(){
+			var slices = this.roll.slice();
+			var playNotes = this._playNotes;
+			slices.forEach(function(slice){
+				// if (a) {
+				// 	clearTimeout(a)
+				// }
+				var a = setTimeout(_playNotes.bind(null, slice.notes), slice.time);
+				// clearTimeout(a)
+			});
 		}
-		
+
 	}
 })();

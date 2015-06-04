@@ -1,21 +1,22 @@
 var Key = React.createClass({
-	
+
 	getInitialState: function(){
-		
+
 		if (this.props.type) {
 			return {keyClass: this.props.type }
 		}else{
 			return {keyClass: "key" }
 		}
-		
+
 	},
-	
+
 	componentDidMount:function(){
 		this.note = new Note(allTones[this.props.noteName])
 		KeyStore.addChangeListener(this.playNote);
 	},
 
 	playNote: function(){
+		var playingKeys = KeyStore.getPlayingKeys();
 		if (playingKeys[this.props.noteName]) {
 			this.note.start();
 			if (this.props.type) {
@@ -23,7 +24,7 @@ var Key = React.createClass({
 			}else{
 				this.setState({keyClass: "blue-key"})
 			}
-			
+
 		}else{
 			this.note.stop();
 			if (this.props.type) {
@@ -31,7 +32,7 @@ var Key = React.createClass({
 			}else{
 				this.setState({keyClass: "key"});
 			}
-			
+
 		}
 	},
 
@@ -39,7 +40,7 @@ var Key = React.createClass({
 		var c = this.state.keyClass
 			return(
 				<div className={c}>
-					
+
 				</div>
 			)
 	}

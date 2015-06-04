@@ -15,31 +15,31 @@
  */
 
 .key{
-	width: 20px;
-	height: 100px;
+	width: 50px;
+	height: 300px;
 	border: solid 1px black;
 	background-color: white;
 }
 
 .sharp{
-	width: 15px;
-	height: 75px;
+	width: 30px;
+	height: 220px;
 	background-color: black;
 	z-index: 2;
-	margin:0 -7.5px 0 -7.5px;
+	margin:0 -15px 0 -15px;
 }
 
 .sharp-active{
-	width: 15px;
-	height: 75px;
+	width: 30px;
+	height: 220px;
 	background-color: blue;
 	z-index: 2;
-	margin:0 -7.5px 0 -7.5px;
+	margin:0 -15px 0 -15px;
 }
 
 .blue-key{
-	width: 20px;
-	height: 100px;
+	width: 50px;
+	height: 300px;
 	border: solid 1px white;
 	background-color: blue;
 }
