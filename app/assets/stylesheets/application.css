@@ -49,3 +49,7 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+body{
+	background: linear-gradient(to bottom, #ba4100 30%,#ba4100 100%);
+}
