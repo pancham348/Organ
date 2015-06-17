@@ -41,9 +41,11 @@
 	width: 50px;
 	height: 300px;
 	border: solid 1px white;
-	background-color: blue;
+	background-color: lightgrey;
 }
 
 #organ{
 	display: inline-flex;
+	margin-left: auto;
+	margin-right: auto;
 }
