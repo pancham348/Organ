@@ -1,4 +1,8 @@
 var Recorder = React.createClass({
+	
+	getInitialState:function(){
+		return {status: "Press Record to start making music!"}
+	},
 	componentDidMount: function(){
 		this.track = new Track("newTrack");
 		KeyStore.addChangeListener(this._onChange);
@@ -8,10 +12,12 @@ var Recorder = React.createClass({
 	},
 	record: function(){
 		this.track.record();
+		this.setState({status: "RECORDING"})
 	},
 
 	stopRecording: function(){
 		this.track.stopRecording();
+		this.setState({status: "Press Record to start making music!"})
 	},
 
 	play: function(){
@@ -22,9 +28,10 @@ var Recorder = React.createClass({
 		var that = this;
 		return(
 			<div id="recorder">
-			<button id="recording" onClick={this.record}>Record</button>
-			<button id="play-track" onClick={this.stopRecording}>Stop</button>
+				<button id="recording" onClick={this.record}>Record</button>
+				<button id="play-track" onClick={this.stopRecording}>Stop</button>
 				<button id="play-track" onClick={this.play}>Play</button>
+				<div id="status">{this.state.status}</div>
 			</div>
 		)
 	}
