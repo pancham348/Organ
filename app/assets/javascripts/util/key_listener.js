@@ -17,19 +17,41 @@
 			
 				organActions.releaseKey(event.keyCode);
 			}else if (event.keyCode === 81){
-				moveRight()
+				moveLeftUp()
+			}else if (event.keyCode === 80){
+				moveRightDown()
+			}else if (event.keyCode === 9){
+				moveLeftDown()
+			}else if (event.keyCode === 219){
+				moveRightUp()
 			}
 		}
 		//}
-		function moveRight(){
-			if (window.leftOct < 6){
+		function moveLeftUp(){
+			if (window.leftOct < 5){
 				window.leftOct++;
+				updateKeys();
 			}
 		}
 		
-		function moveLeft(){
+		function moveLeftDown(){
+			if (window.leftOct > 3){
+				window.leftOct--;
+				updateKeys();
+			}
+		}
+		
+		function moveRightUp(){
+			if (window.rightOct < 5){
+				window.rightOct++;
+				updateKeys();
+			}
+		}
+		
+		function moveRightDown(){
 			if (window.rightOct > 3){
 				window.rightOct--;
+				updateKeys();
 			}
 		}
 })();

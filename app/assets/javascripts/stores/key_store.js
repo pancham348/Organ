@@ -2,23 +2,27 @@
 	window.rightOct = 4;
 	window.leftOct = 3;
 
-	window.KEY_MAP = {
-		65:'C' + leftOct,
-		83:'D' + leftOct,
-		68:'E' + leftOct,
-		70:'F' + leftOct,
-		71:'G' + leftOct,
-		72:'C' + rightOct,
-		74:'D' + rightOct,
-		75:'E' + rightOct,
-		76:'F' + rightOct,
-		186:'G' + rightOct,
-		87:'CS' + leftOct,
-		69:'DS' + leftOct,
-		85:'CS' + rightOct,
-		73:'DS' + rightOct
+	window.updateKeys = function(){
+		window.KEY_MAP = {
+			65:'C' + leftOct,
+			83:'D' + leftOct,
+			68:'E' + leftOct,
+			70:'F' + leftOct,
+			71:'G' + leftOct,
+			72:'C' + rightOct,
+			74:'D' + rightOct,
+			75:'E' + rightOct,
+			76:'F' + rightOct,
+			186:'G' + rightOct,
+			87:'CS' + leftOct,
+			69:'DS' + leftOct,
+			85:'CS' + rightOct,
+			73:'DS' + rightOct
+		}
+		
 	}
-
+	
+ 	updateKeys()
 	var playingKeys = {};
 	window.lastPlayed = [];
 	var CHANGE_EVENT = "change"
