@@ -26,12 +26,16 @@ var Recorder = React.createClass({
 
 	render: function(){
 		var that = this;
+		var leftOct = window.leftOct
+		var rightOct = window.rightOct
 		return(
 			<div id="recorder">
 				<button id="recording" onClick={this.record}>Record</button>
 				<button id="play-track" onClick={this.stopRecording}>Stop</button>
 				<button id="play-track" onClick={this.play}>Play</button>
 				<div id="status">{this.state.status}</div>
+			  <div>{leftOct}</div>
+				<div>{rightOct}</div>
 			</div>
 		)
 	}

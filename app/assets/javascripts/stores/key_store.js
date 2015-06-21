@@ -1,19 +1,22 @@
 (function(){
+	window.rightOct = 4;
+	window.leftOct = 3;
+
 	window.KEY_MAP = {
-		65:'C3',
-		83:'D3',
-		68:'E3',
-		70:'F3',
-		71:'G3',
-		72:'C4',
-		74:'D4',
-		75:'E4',
-		76:'F4',
-		186:'G4',
-		87:'CS3',
-		69:'DS3',
-		85:'CS4',
-		73:'DS4'
+		65:'C' + leftOct,
+		83:'D' + leftOct,
+		68:'E' + leftOct,
+		70:'F' + leftOct,
+		71:'G' + leftOct,
+		72:'C' + rightOct,
+		74:'D' + rightOct,
+		75:'E' + rightOct,
+		76:'F' + rightOct,
+		186:'G' + rightOct,
+		87:'CS' + leftOct,
+		69:'DS' + leftOct,
+		85:'CS' + rightOct,
+		73:'DS' + rightOct
 	}
 
 	var playingKeys = {};

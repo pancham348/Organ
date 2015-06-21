@@ -16,6 +16,7 @@
 
 	Track.prototype = {
 		record: function(){
+			this.roll = []
 			KeyStore._resetKeys();
 			var d = new Date();
 			this.startTime = d.getTime();

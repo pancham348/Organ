@@ -16,8 +16,20 @@
 			if (KEY_MAP[event.keyCode]){
 			
 				organActions.releaseKey(event.keyCode);
+			}else if (event.keyCode === 81){
+				moveRight()
 			}
 		}
 		//}
-	
+		function moveRight(){
+			if (window.leftOct < 6){
+				window.leftOct++;
+			}
+		}
+		
+		function moveLeft(){
+			if (window.rightOct > 3){
+				window.rightOct--;
+			}
+		}
 })();
